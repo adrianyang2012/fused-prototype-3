@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bssbdvurctgis"]
+
+[ext_resource type="Script" uid="uid://r06kuof64ge6" path="res://Managers/sword_killer.gd" id="1_ifltv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eemn"]
+size = Vector2(64, 78)
+
+[node name="Sword killer" type="Node2D"]
+script = ExtResource("1_ifltv")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_1eemn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

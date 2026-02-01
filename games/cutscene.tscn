@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnsli8x30705r"]
+
+[ext_resource type="Script" uid="uid://b7w53ls4vd87s" path="res://Managers/cutscene.gd" id="1_c2dxa"]
+[ext_resource type="Texture2D" uid="uid://b7pp08eiiqm6" path="res://assets/Villager-Face.png" id="2_hqifd"]
+[ext_resource type="Texture2D" uid="uid://dfsr2g2lw5wcn" path="res://assets/Piranha_01.png" id="3_ymumc"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_c2dxa")
+
+[node name="VillagerFace" type="Sprite2D" parent="."]
+position = Vector2(-508, 23)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_hqifd")
+
+[node name="Label" type="Label" parent="VillagerFace"]
+visible = false
+offset_left = 41.60001
+offset_top = -116.399994
+offset_right = 265.6
+offset_bottom = -20.000008
+text = "Nechrome must be stopped.  We shall corrupt him"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VillagerFace"]
+visible = false
+offset_left = 238.4
+offset_top = -53.2
+offset_right = 401.40002
+offset_bottom = 34.8
+theme_override_font_sizes/font_size = 16
+text = "But the miniboss failed, he is too resilient."
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="VillagerFace"]
+visible = false
+offset_left = 45.6
+offset_top = 31.999998
+offset_right = 282.8
+offset_bottom = 138.4
+text = "Then we have to kill his master with a trap!"
+
+[node name="Piranha01" type="Sprite2D" parent="."]
+position = Vector2(4780, -2105)
+scale = Vector2(250, 250)
+texture = ExtResource("3_ymumc")
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

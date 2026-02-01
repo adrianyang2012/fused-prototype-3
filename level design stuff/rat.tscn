@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://drbuigofv0lnv"]
+
+[ext_resource type="Script" uid="uid://bkywlft6y6en" path="res://Managers/flying_rat.gd" id="1_p3nl4"]
+[ext_resource type="Texture2D" uid="uid://c5b62vi2xaago" path="res://assets/Spider3.png" id="2_172ra"]
+[ext_resource type="Script" uid="uid://c3l7v474jcrnw" path="res://Managers/arrow_detector_rat.gd" id="3_ja7ka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fgvd"]
+size = Vector2(346, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oksv"]
+size = Vector2(349, 161)
+
+[node name="rat" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_p3nl4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.0000153, -25.499998)
+scale = Vector2(1.5779815, 1.5099999)
+texture = ExtResource("2_172ra")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+scale = Vector2(0.06, 0.06)
+target_position = Vector2(3083.3333, 16.666666)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.03, 0.03)
+target_position = Vector2(2333.3333, -733.33344)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+rotation = 4.712389
+scale = Vector2(0.03, 0.03)
+target_position = Vector2(5700, 133.33327)
+hit_from_inside = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.06, 0.06)
+target_position = Vector2(2850, -16.666916)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -28)
+shape = SubResource("RectangleShape2D_6fgvd")
+
+[node name="arrow detector rat" type="Area2D" parent="."]
+position = Vector2(-0.5, -2)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_ja7ka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow detector rat"]
+position = Vector2(3.5, -26)
+shape = SubResource("RectangleShape2D_8oksv")
+
+[node name="Label" type="Label" parent="arrow detector rat"]
+offset_left = -7.0
+offset_top = -100.0
+offset_right = 72.5
+offset_bottom = -53.0
+theme_override_font_sizes/font_size = 64
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="arrow detector rat"]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="area_entered" from="arrow detector rat" to="arrow detector rat" method="_on_area_entered"]
+[connection signal="area_exited" from="arrow detector rat" to="arrow detector rat" method="_on_area_exited"]
+[connection signal="timeout" from="arrow detector rat/Timer" to="arrow detector rat" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
