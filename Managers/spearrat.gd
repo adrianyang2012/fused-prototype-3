@@ -27,7 +27,7 @@ var up = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var sprint = 0
 func _process(delta: float) -> void:
-	if randf()>0.97:
+	if randf()>0.98:
 		sprint = 1
 		timer_2.start()
 	if health<1:
