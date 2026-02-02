@@ -5,3 +5,4 @@ res://games/gamejourney.tscn
 res://Managers/guardian.gd
 res://level design stuff/Danger zone/shady_guy.tscn
 res://Managers/talk_npc.gd
+res://Managers/player.gd

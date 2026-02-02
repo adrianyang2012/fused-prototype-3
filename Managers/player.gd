@@ -135,7 +135,7 @@ func _physics_process(delta: float) -> void:
 		super_jump_status = 1
 	parachute = 0
 	sprite_2d_2.visible = false
-	if parachute_usable and Input.is_action_pressed("parachute"):
+	if parachute_usable and Input.is_action_pressed("parachute") and velocity.y>200:
 		parachute = 1
 		sprite_2d_2.visible = true
 	#super jump manager
