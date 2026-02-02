@@ -1,2 +1,4 @@
-res://level design stuff/spearrat.tscn
-res://Managers/spearrat.gd
+res://games/game.tscn
+res://games/game2.tscn
+res://games/game_3.tscn
+res://games/gamejourney.tscn
