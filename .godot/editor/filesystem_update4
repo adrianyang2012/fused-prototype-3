@@ -2,3 +2,6 @@ res://games/game.tscn
 res://games/game2.tscn
 res://games/game_3.tscn
 res://games/gamejourney.tscn
+res://Managers/guardian.gd
+res://level design stuff/Danger zone/shady_guy.tscn
+res://Managers/talk_npc.gd

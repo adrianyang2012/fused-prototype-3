@@ -12,6 +12,7 @@ var num = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("skip") and num>0:
+		player.stop()
 		shady_guy.queue_free()
 @onready var label: Label = $"../Label"
 @onready var label_2: Label = $"../Label2"

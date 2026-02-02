@@ -16,7 +16,7 @@ func _ready() -> void:
 var follow_player = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("skip") and cur_mode<11:
+	if Input.is_action_just_pressed("skip") and cur_mode<6:
 		label.text = ""
 		label_2.text = ""
 		follow_player = 1

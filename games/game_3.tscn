@@ -411,19 +411,19 @@ shape = SubResource("RectangleShape2D_aa0lp")
 
 [node name="Label" type="Label" parent="corrupter"]
 visible = false
-offset_left = 24746.0
-offset_top = -10590.0
-offset_right = 26180.0
-offset_bottom = -8940.0
+offset_left = 14877.0
+offset_top = -2734.0
+offset_right = 16311.0
+offset_bottom = -1084.0
 theme_override_font_sizes/font_size = 64
 text = "Not enough corruption (60 corruption needed)"
 
 [node name="Label2" type="Label" parent="corrupter"]
 visible = false
-offset_left = 24808.0
-offset_top = -10469.0
-offset_right = 25743.0
-offset_bottom = -8487.0
+offset_left = 15043.0
+offset_top = -2717.0
+offset_right = 15978.0
+offset_bottom = -735.0
 theme_override_font_sizes/font_size = 64
 text = "Corruption sucessfull"
 
