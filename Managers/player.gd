@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var speed = 800.0
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -2250.0
 var double = 0
 var extra_jumps = 0
 var floor = 0
@@ -123,10 +123,10 @@ func reset() -> void:
 
 func _physics_process(delta: float) -> void:
 	#parachute manager and enables parachute only if you unlocked and if you are pressing p
-	#if Input.is_action_pressed("ui_down") and not hacker:
-	#	speed = 12000
-	#	extra_jumps = 1000
-	#	hacker = 1
+	if Input.is_action_pressed("ui_down") and not hacker:
+		speed = 12000
+		extra_jumps = 1000
+		hacker = 1
 	if Input.is_action_pressed("TEST_STOP"):
 		speed = 800
 		extra_jumps = 0
@@ -152,7 +152,7 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.self_modulate = Color(1,1,1,1)
 	#movement
 	if not is_on_floor():
-			velocity += get_gravity() * delta*(1-parachute*0.9)
+			velocity += get_gravity() * 5 * (1 - parachute*0.9) * delta
 	if not cutscene_mode:
 		#manages invis turning on and off
 		if Input.is_action_just_pressed("invis") and invis>0:
