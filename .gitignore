@@ -11,3 +11,6 @@ export_credentials.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
+
+# Individual files
+.godot/editor/script_editor_cache.cfg

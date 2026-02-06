@@ -185,7 +185,7 @@ func _physics_process(delta: float) -> void:
 	
 		#jump
 		if super_jump_status:
-			velocity.y = JUMP_VELOCITY*1.5
+			velocity.y = JUMP_VELOCITY * 1.5
 			super_jump_status = 0
 			print('locked')
 		else:
