@@ -112,7 +112,7 @@ var pause = 0
 var first = 1
 var hacker = 0
 func speed_upgrade() -> void:
-	extra_jumps+=1
+	extra_jumps += 1
 	speed+=150
 	first = 0
 	
