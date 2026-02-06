@@ -156,7 +156,7 @@ func _physics_process(delta: float) -> void:
 	if not cutscene_mode:
 		#manages invis turning on and off
 		if Input.is_action_just_pressed("invis") and invis>0:
-			invis-=1
+			invis -= 1
 			inventory_manager.invisible_loss()
 			timer_6.start()
 			invis_mode = 1
