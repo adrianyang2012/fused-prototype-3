@@ -190,7 +190,7 @@ func _physics_process(delta: float) -> void:
 			print('locked')
 		else:
 			if Input.is_action_just_pressed("ui_up") and (floor or double<extra_jumps):
-				velocity.y = JUMP_VELOCITY*(1-parachute*0.5)
+				velocity.y = JUMP_VELOCITY * (1-parachute*0.5)
 				
 					
 				if is_on_floor():
