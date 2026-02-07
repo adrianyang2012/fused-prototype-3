@@ -6,6 +6,7 @@ var extra_jumps = 0
 var floor = 0
 var invis = 0
 var cutscene_mode = 0
+#fart
 @onready var health_manager: Node2D = $"Camera2D/health manager"
 @onready var label_1: Node2D = $"Camera2D/Label 1"
 @onready var timer: Timer = $Timer

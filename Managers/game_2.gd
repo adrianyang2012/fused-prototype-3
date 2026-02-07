@@ -45,7 +45,6 @@ func summon(x,y,health) -> void:
 	enemies.append(instance)
 func summon3(x,y,health) -> void:
 	var instance = scene9.instantiate()
-	add_child(instance)
 	
 	instance.position.x = x
 	instance.position.y = y
@@ -53,7 +52,6 @@ func summon3(x,y,health) -> void:
 	enemies.append(instance)
 func summon4(x,y,health) -> void:
 	var instance = scene10.instantiate()
-	add_child(instance)
 	
 	instance.position.x = x
 	instance.position.y = y
